@@ -25,5 +25,11 @@ spring:
       expiration: 86400000 # a day
       refresh-token:
         expiration: 604800000 # 7 days
+application:
+  minio:
+    applicationName: bozor
+    host: https://localhost:9000
+    username: admin
+    password: password
 server:
   port: 8888

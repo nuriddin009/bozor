@@ -8,6 +8,9 @@ import org.hibernate.annotations.SQLRestriction;
 import uz.market.bozor.entity.constants.Status;
 import uz.market.bozor.entity.template.BaseEntity;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
@@ -40,5 +43,12 @@ public class User extends BaseEntity {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "user_privilege",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "privilege_id"))
+    private Set<Privilege> privileges = new HashSet<>();
 
 }

@@ -2,18 +2,21 @@ package uz.market.bozor.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import jakarta.validation.constraints.NotNull;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
+import org.jetbrains.annotations.NotNull;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
+import uz.market.bozor.entity.User;
+import uz.market.bozor.repository.UserRepository;
 
 import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
-import io.jsonwebtoken.security.Keys;
-import io.jsonwebtoken.io.Decoders;
 
 @Service
 public class JwtService {
@@ -24,6 +27,9 @@ public class JwtService {
     private long jwtExpiration;
     @Value("${spring.security.jwt.refresh-token.expiration}")
     private long refreshExpiration;
+
+    @Autowired
+    private UserRepository userRepository;
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -36,8 +42,25 @@ public class JwtService {
 
     public String generateToken(@NotNull UserDetails userDetails) {
         Map<String, Object> map = new HashMap<>();
-        System.out.println(userDetails.getAuthorities());
-        userDetails.getAuthorities().forEach(grantedAuthority -> map.put(String.valueOf(grantedAuthority.getAuthority()), String.valueOf(grantedAuthority.getAuthority())));
+
+        User user = userRepository.findByEmail(userDetails.getUsername()).orElseThrow();
+
+        if (user.getPrivileges().isEmpty()) {
+            userDetails.getAuthorities()
+                    .forEach(grantedAuthority -> map.put(String.valueOf(grantedAuthority.getAuthority()),
+                            String.valueOf(grantedAuthority.getAuthority())));
+
+        }else {
+
+            userDetails.getAuthorities()
+                    .forEach(grantedAuthority -> map.put(String.valueOf(grantedAuthority.getAuthority()),
+                            String.valueOf(grantedAuthority.getAuthority())));
+
+            user.getPrivileges().forEach(privilege -> map.put(String.valueOf(privilege.getPrivilegeName()),
+                    String.valueOf(privilege.getPrivilegeName())));
+
+        }
+
         return generateToken(map, userDetails);
     }
 
@@ -93,7 +116,8 @@ public class JwtService {
                 .getBody();
     }
 
-    private @NotNull Key getSignInKey() {
+    @NotNull
+    private Key getSignInKey() {
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
