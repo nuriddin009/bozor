@@ -16,7 +16,6 @@ public class UserManager implements UserDetails {
         this.user = user;
     }
 
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return user.getRoles().stream().map(role -> new SimpleGrantedAuthority(role

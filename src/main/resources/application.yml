@@ -28,7 +28,7 @@ spring:
 application:
   minio:
     applicationName: bozor
-    host: https://localhost:9000
+    host: http://localhost:9000
     username: rootbozor
     password: rootbozor
 server:
