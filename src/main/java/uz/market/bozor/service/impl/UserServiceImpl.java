@@ -1,4 +1,4 @@
-package uz.market.bozor.repository.impl;
+package uz.market.bozor.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -6,6 +6,7 @@ import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
 import uz.market.bozor.entity.constants.Status;
+import uz.market.bozor.entity.constants.Variables;
 import uz.market.bozor.entity.template.BaseEntity;
 
 import java.util.ArrayList;
@@ -29,7 +30,8 @@ public class User extends BaseEntity {
     private String firstname;
     @Column(length = 64)
     private String lastname;
-    @Email(message = "invalid email")
+    @Email(message = "invalid email", regexp = Variables.emailRegex)
+    @Column(unique = true)
     private String email;
     private String password;
     private String phoneNumber;
