@@ -11,7 +11,6 @@ import uz.market.bozor.entity.constants.PrivilegeName;
 
 @Getter
 @Setter
-
 @SQLDelete(sql = "update privilege set deleted = true where id=?")
 @SQLRestriction(value = "deleted = false")
 @AllArgsConstructor
@@ -26,6 +25,7 @@ public class Privilege {
     @Enumerated(EnumType.STRING)
     private PrivilegeName privilegeName;
 
-    @Column(nullable = false, columnDefinition = "boolean default false")
-    private boolean deleted;
+    public Privilege(PrivilegeName privilegeName) {
+        this.privilegeName = privilegeName;
+    }
 }

@@ -4,13 +4,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-import uz.market.bozor.entity.District;
-import uz.market.bozor.entity.Region;
-import uz.market.bozor.entity.User;
-import uz.market.bozor.repository.DistrictRepository;
-import uz.market.bozor.repository.RegionRepository;
-import uz.market.bozor.repository.UserRepository;
+import uz.market.bozor.entity.*;
+import uz.market.bozor.entity.constants.PrivilegeName;
+import uz.market.bozor.entity.constants.RoleName;
+import uz.market.bozor.entity.constants.Status;
+import uz.market.bozor.repository.*;
 
+import java.util.HashSet;
 import java.util.List;
 
 @Component
@@ -22,17 +22,38 @@ public class DataLoader implements CommandLineRunner {
     private final PasswordEncoder passwordEncoder;
     private final RegionRepository regionRepository;
     private final DistrictRepository districtRepository;
-
+    private final RoleRepository roleRepository;
+    private final PrivilegeRepository privilegeRepository;
 
     @Override
     public void run(String... args) throws Exception {
+
         if (userRepository.count() == 0) {
+
+            List<Role> roles = roleRepository.saveAll(
+                    List.of(
+                            new Role(RoleName.ROLE_STORE),
+                            new Role(RoleName.ROLE_SUPER_ADMIN)
+                    )
+            );
+            List<Privilege> privileges = privilegeRepository.saveAll(
+                    List.of(
+                            new Privilege(PrivilegeName.HOME),
+                            new Privilege(PrivilegeName.ACCOUNTS),
+                            new Privilege(PrivilegeName.ORDERS),
+                            new Privilege(PrivilegeName.STOCKS)
+                    )
+            );
+
             userRepository.save(User.builder()
                     .email("nuriddin@gmail.com")
                     .firstname("Nuriddin")
                     .lastname("Inoyatov")
                     .phoneNumber("+998999686653")
+                    .status(Status.ACTIVE)
                     .password(passwordEncoder.encode("password"))
+                    .roles(new HashSet<>(roles))
+                    .privileges(new HashSet<>(privileges))
                     .build());
         }
 
