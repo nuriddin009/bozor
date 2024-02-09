@@ -33,3 +33,11 @@ application:
     password: rootbozor
 server:
   port: 8888
+
+logging:
+  file:
+    name: bozor-application.log
+  level:
+    root: info
+    org:
+      springframework: info
