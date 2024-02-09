@@ -18,7 +18,7 @@ public class AttachmentController {
 
     private final AttachmentService service;
 
-    @PostMapping(value = "/uploadFile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/uploadFile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> uploadFile(@RequestPart(value = "file") MultipartFile file) {
         service.uploadFile(file);
         return new ResponseEntity<>("success", HttpStatus.OK);

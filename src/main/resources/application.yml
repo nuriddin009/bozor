@@ -29,7 +29,7 @@ application:
   minio:
     applicationName: bozor
     host: https://localhost:9000
-    username: admin
-    password: password
+    username: rootbozor
+    password: rootbozor
 server:
   port: 8888
