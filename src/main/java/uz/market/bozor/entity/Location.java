@@ -20,7 +20,5 @@ public class Location extends BaseEntity {
 
     private double latitude;
     private double longitude;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    private Location location;
+    
 }

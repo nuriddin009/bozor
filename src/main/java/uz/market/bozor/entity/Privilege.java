@@ -11,8 +11,6 @@ import uz.market.bozor.entity.constants.PrivilegeName;
 
 @Getter
 @Setter
-@SQLDelete(sql = "update privilege set deleted = true where id=?")
-@SQLRestriction(value = "deleted = false")
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
