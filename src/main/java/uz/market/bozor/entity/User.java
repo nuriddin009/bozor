@@ -38,7 +38,6 @@ public class User extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_role",
