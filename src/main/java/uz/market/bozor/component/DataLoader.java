@@ -5,11 +5,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import uz.market.bozor.entity.*;
+import uz.market.bozor.entity.constants.DAY;
 import uz.market.bozor.entity.constants.PrivilegeName;
 import uz.market.bozor.entity.constants.RoleName;
 import uz.market.bozor.entity.constants.Status;
 import uz.market.bozor.repository.*;
 
+import java.time.LocalTime;
 import java.util.HashSet;
 import java.util.List;
 
@@ -24,9 +26,11 @@ public class DataLoader implements CommandLineRunner {
     private final DistrictRepository districtRepository;
     private final RoleRepository roleRepository;
     private final PrivilegeRepository privilegeRepository;
+    private final TimingRepository timingRepository;
+    private final StoreRepository storeRepository;
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
 
         if (userRepository.count() == 0) {
 
@@ -55,6 +59,23 @@ public class DataLoader implements CommandLineRunner {
                     .roles(new HashSet<>(roles))
                     .privileges(new HashSet<>(privileges))
                     .build());
+        }
+
+        if (timingRepository.count() == 0) {
+            Store store = storeRepository.save(Store.builder()
+//                    .bankAccount(860_019_015L)
+                    .bankAccountDetails("Nuriddin Inoyatov")
+                    .name("Lux brand")
+                    .email("luxbrand@gmail.com")
+                    .build());
+            for (DAY day : DAY.values()) {
+                timingRepository.save(Timing.builder()
+                        .day(day)
+                        .openingTime(LocalTime.of(9, 0, 0))
+                        .closingTime(LocalTime.of(10, 0, 0))
+                        .store(store)
+                        .build());
+            }
         }
 
         if (regionRepository.count() == 0) {

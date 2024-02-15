@@ -22,9 +22,16 @@ public class Product extends BaseEntity {
     private BigDecimal price;
     private BigDecimal oldPrice;
     private String itemCode;
-    private String name;
+    private String nameUz;
+    private String nameRu;
+    private String nameEng;
+    private float avgRating;
     @Column(columnDefinition = "text")
-    private String details;
+    private String detailsUz;
+    @Column(columnDefinition = "text")
+    private String detailsRu;
+    @Column(columnDefinition = "text")
+    private String detailsEng;
     private BigDecimal amount = BigDecimal.valueOf(0);
 
 }

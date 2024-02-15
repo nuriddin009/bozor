@@ -1,10 +1,14 @@
 package uz.market.bozor.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
 import uz.market.bozor.entity.template.BaseEntity;
+
 
 @Getter
 @Setter
@@ -19,9 +23,12 @@ public class Branch extends BaseEntity {
     private double longitude;
     private double latitude;
     private String address;
-    @Column(columnDefinition = "text")
-    private String name;
-
+    @Column(length = 500)
+    private String nameUz;
+    @Column(length = 500)
+    private String nameRu;
+    @Column(length = 500)
+    private String nameEng;
     @ManyToOne(fetch = FetchType.LAZY)
     private Store store;
 }

@@ -1,8 +1,10 @@
 package uz.market.bozor.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToOne;
+import jakarta.validation.constraints.Pattern;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
@@ -24,7 +26,9 @@ public class Store extends BaseEntity {
 
 
     private String email;
-    private Long bankAccount;
+    @Column(length = 16)
+    @Pattern(regexp = "^[0-9]{13,19}$", message = "Invalid card number format")
+    private String bankAccount;
     private String bankAccountDetails;
 
     @OneToOne(fetch = FetchType.LAZY)

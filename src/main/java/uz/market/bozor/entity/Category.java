@@ -20,7 +20,9 @@ public class Category extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Attachment attachment;
-    private String name;
+    private String nameUz;
+    private String nameRu;
+    private String nameEng;
     @ManyToOne(fetch = FetchType.LAZY)
     private Store store;
 

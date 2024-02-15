@@ -18,7 +18,7 @@ public class DistrictController {
 
 
     @GetMapping
-    public ResponseEntity<ApiResponse> getDistricts(@RequestParam("search") String search,
+    public ResponseEntity<ApiResponse> getDistricts(@RequestParam(value = "search", defaultValue = "") String search,
                                                     @RequestParam("regionId") Integer regionId) {
         return ResponseEntity.ok(districtRepository.getDistricts(search, regionId));
     }

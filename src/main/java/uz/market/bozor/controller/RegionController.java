@@ -19,7 +19,7 @@ public class RegionController {
 
 
     @GetMapping
-    public ResponseEntity<ApiResponse> getRegions(@RequestParam("search") String search) {
+    public ResponseEntity<ApiResponse> getRegions(@RequestParam(value = "search", defaultValue = "") String search) {
         return ResponseEntity.ok(regionRepository.getRegions(search));
     }
 
