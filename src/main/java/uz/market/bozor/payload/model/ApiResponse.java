@@ -14,8 +14,20 @@ public class ApiResponse {
     private String message;
     private boolean status;
 
-    public ApiResponse(Object data, String message) {
-        this.data = data;
-        this.message = message;
+    public static ApiResponse successResponse(Object data, String message) {
+        return new ApiResponse(data, message, true);
     }
+
+    public static ApiResponse successResponse(String message) {
+        return new ApiResponse(null, message, true);
+    }
+
+    public static ApiResponse failResponse(String message) {
+        return new ApiResponse(null, message, false);
+    }
+
+    public static ApiResponse failResponse(Object data, String message) {
+        return new ApiResponse(data, message, false);
+    }
+
 }
