@@ -21,8 +21,12 @@ public class ProductRepositoryImpl implements CustomProductRepository {
         final boolean hasSearch = StringUtils.isNotEmpty(filter.getSearch());
         final boolean hasSort = filter.formPageable().getSort().isSorted();
 
-        StringBuilder sql = new StringBuilder("select new uz.market.bozor.payload.response.ProductResponse(null, null, 3.2f, null, null, null, null, null, null, null) " +
-                "from Product t ");
+        StringBuilder sql = new StringBuilder("select t from Product t ");
+
+
+        StringBuilder countQuery = new StringBuilder(sql.toString()
+                .replace("select t", "select count(t)"));
+
 
         TypedQuery<ProductResponse> query = entityManager.createQuery(sql.toString(), ProductResponse.class);
         return query.getResultList();

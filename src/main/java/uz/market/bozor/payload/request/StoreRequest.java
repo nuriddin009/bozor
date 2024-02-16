@@ -10,6 +10,6 @@ import java.io.Serializable;
  */
 
 public record StoreRequest(String name, @NotNull String supportPhone, double latitude, double longitude,
-                           @Email String email, @NotNull Long bankAccount,
+                           @Email String email, @NotNull String bankAccount,
                            String bankAccountDetails) implements Serializable {
 }

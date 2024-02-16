@@ -21,7 +21,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString(onlyExplicitlyIncluded = true, doNotUseGetters = true)
-@ApiModel(description = "Параметры фильтра")
+@ApiModel(description = "Filter options")
 public class PageFilter implements Serializable {
     @ApiModelProperty(value = "The page number, by default it is set to 0")
     @Min(value = 0, message = "Page number cannot be smaller than 0")
