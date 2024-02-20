@@ -1,4 +1,4 @@
-package uz.market.bozor.repository;
+package uz.market.bozor.repository.custom;
 
 import org.springframework.data.domain.Page;
 import uz.market.bozor.entity.User;

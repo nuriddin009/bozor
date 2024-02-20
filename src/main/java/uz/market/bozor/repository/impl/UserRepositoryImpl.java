@@ -10,9 +10,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 import uz.market.bozor.entity.User;
 import uz.market.bozor.filter.UserFilter;
-import uz.market.bozor.repository.CustomUserRepository;
-
-import java.util.List;
+import uz.market.bozor.repository.custom.CustomUserRepository;
 
 @Repository
 public class UserRepositoryImpl implements CustomUserRepository {

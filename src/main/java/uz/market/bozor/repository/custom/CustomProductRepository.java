@@ -1,4 +1,4 @@
-package uz.market.bozor.repository;
+package uz.market.bozor.repository.custom;
 
 import uz.market.bozor.filter.ProductFilter;
 import uz.market.bozor.payload.response.ProductResponse;

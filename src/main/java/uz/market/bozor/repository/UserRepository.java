@@ -1,6 +1,7 @@
 package uz.market.bozor.repository;
 
 import uz.market.bozor.entity.User;
+import uz.market.bozor.repository.custom.CustomUserRepository;
 
 import java.util.Optional;
 

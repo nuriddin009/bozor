@@ -37,7 +37,4 @@ server:
 logging:
   file:
     name: bozor-application.log
-  level:
-    root: info
-    org:
-      springframework: info
+

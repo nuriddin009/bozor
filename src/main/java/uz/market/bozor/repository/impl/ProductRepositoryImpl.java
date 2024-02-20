@@ -7,7 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Repository;
 import uz.market.bozor.filter.ProductFilter;
 import uz.market.bozor.payload.response.ProductResponse;
-import uz.market.bozor.repository.CustomProductRepository;
+import uz.market.bozor.repository.custom.CustomProductRepository;
 
 import java.util.List;
 
