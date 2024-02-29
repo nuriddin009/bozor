@@ -45,21 +45,14 @@ public class JwtService {
 
         User user = userRepository.findByEmail(userDetails.getUsername()).orElseThrow();
 
-        if (user.getPrivileges().isEmpty()) {
-            userDetails.getAuthorities()
-                    .forEach(grantedAuthority -> map.put(String.valueOf(grantedAuthority.getAuthority()),
-                            String.valueOf(grantedAuthority.getAuthority())));
-
-        }else {
-
-            userDetails.getAuthorities()
-                    .forEach(grantedAuthority -> map.put(String.valueOf(grantedAuthority.getAuthority()),
-                            String.valueOf(grantedAuthority.getAuthority())));
-
+        if (!user.getPrivileges().isEmpty()) {
             user.getPrivileges().forEach(privilege -> map.put(String.valueOf(privilege.getPrivilegeName()),
                     String.valueOf(privilege.getPrivilegeName())));
-
         }
+
+        userDetails.getAuthorities()
+                .forEach(grantedAuthority -> map.put(String.valueOf(grantedAuthority.getAuthority()),
+                        String.valueOf(grantedAuthority.getAuthority())));
 
         return generateToken(map, userDetails);
     }

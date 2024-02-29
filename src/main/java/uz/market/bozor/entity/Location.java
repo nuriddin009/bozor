@@ -1,5 +1,6 @@
 package uz.market.bozor.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToOne;
@@ -20,5 +21,10 @@ public class Location extends BaseEntity {
 
     private double latitude;
     private double longitude;
-    
+    @Column(length = 500)
+    private String instruction;
+    private String entrance;
+    private Short floor;
+    private String apartment;
+    private String locationName;
 }

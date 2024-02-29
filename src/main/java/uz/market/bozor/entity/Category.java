@@ -1,12 +1,12 @@
 package uz.market.bozor.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
 import uz.market.bozor.entity.template.BaseEntity;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -25,5 +25,6 @@ public class Category extends BaseEntity {
     private String nameEng;
     @ManyToOne(fetch = FetchType.LAZY)
     private Store store;
-
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private List<Product> products;
 }

@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import uz.market.bozor.payload.model.BaseResponse;
 import uz.market.bozor.service.AttachmentService;
+
+import static uz.market.bozor.component.ResponseGenerator.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -21,7 +24,8 @@ public class AttachmentController {
     @PostMapping(value = "/uploadFile", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> uploadFile(@RequestPart(value = "file") MultipartFile file) {
         service.uploadFile(file);
-        return new ResponseEntity<>("success", HttpStatus.OK);
+        BaseResponse<String> response = generateSuccessResponse.apply("Imaged uploaded successfully");
+        return ResponseEntity.ok("success");
     }
 
 

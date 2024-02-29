@@ -2,6 +2,8 @@ package uz.market.bozor.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
@@ -26,6 +28,7 @@ public class Product extends BaseEntity {
     private String nameRu;
     private String nameEng;
     private float avgRating;
+    private String color;
     @Column(columnDefinition = "text")
     private String detailsUz;
     @Column(columnDefinition = "text")
@@ -33,5 +36,7 @@ public class Product extends BaseEntity {
     @Column(columnDefinition = "text")
     private String detailsEng;
     private BigDecimal amount = BigDecimal.valueOf(0);
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Category category;
 
 }

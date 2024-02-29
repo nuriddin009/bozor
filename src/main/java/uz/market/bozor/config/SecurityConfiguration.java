@@ -57,6 +57,7 @@ public class SecurityConfiguration {
                 .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+
                 /* .logout(logoutConfigurer -> logoutConfigurer
                          .logoutUrl("/api/v1/auth/logout")
                          .addLogoutHandler(logoutHandler)
