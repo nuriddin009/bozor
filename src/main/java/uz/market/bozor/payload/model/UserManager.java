@@ -1,5 +1,6 @@
 package uz.market.bozor.payload.model;
 
+import org.jetbrains.annotations.Contract;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,8 +19,12 @@ public class UserManager implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return user.getRoles().stream().map(role -> new SimpleGrantedAuthority(role
-                .getRoleName().toString())).toList();
+        return user.getRoles().stream()
+                .map(role ->
+                        new SimpleGrantedAuthority(
+                                role
+                                        .getRoleName().toString()
+                        )).toList();
     }
 
     @Override
