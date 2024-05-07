@@ -1,7 +1,6 @@
 package uz.market.bozor.payload.request;
 
 import lombok.Data;
-import uz.market.bozor.entity.Privilege;
 import uz.market.bozor.entity.Role;
 import uz.market.bozor.entity.constants.Status;
 
@@ -16,6 +15,6 @@ public class UserRequest {
     private String phoneNumber;
     private Status status;
     private Set<Role> roles;
-    private Set<Privilege> privileges;
+
 
 }

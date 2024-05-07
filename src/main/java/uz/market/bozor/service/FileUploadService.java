@@ -44,7 +44,8 @@ public class FileUploadService {
 
     public void removeObject(Attachment fileUpload) {
         try {
-            minioClient.removeObject(RemoveObjectArgs.builder().bucket(applicationProperties.getMinio().getApplicationName()).object(fileUpload.getObjectName()).build());
+            minioClient.removeObject(RemoveObjectArgs.builder().bucket(applicationProperties.getMinio()
+                    .getApplicationName()).object(fileUpload.getObjectName()).build());
             fileUploadRepository.deleteById(fileUpload.getId());
         } catch (ErrorResponseException | InsufficientDataException | InternalException | InvalidKeyException |
                  InvalidResponseException | IOException | NoSuchAlgorithmException | ServerException |

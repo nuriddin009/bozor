@@ -1,22 +1,19 @@
 package uz.market.bozor.repository.page;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 @Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class ResponsePageImpl<T> implements ResponsePage<T> {
-
-  private final List<T> elements;
-
-  private final RequestPage requestPage;
-
-  private final long totalElements;
-
-  public ResponsePageImpl(RequestPage request, List<T> elements, long totalElements) {
-    this.requestPage = request;
-    this.totalElements = totalElements;
-    this.elements = elements;
-  }
+    private List<T> elements;
+    private RequestPage requestPage;
+    private long totalElements;
 }

@@ -5,13 +5,11 @@ import jakarta.validation.constraints.Email;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
+import uz.market.bozor.entity.constants.Language;
 import uz.market.bozor.entity.constants.Status;
 import uz.market.bozor.entity.constants.Variables;
 import uz.market.bozor.entity.template.BaseEntity;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 
@@ -38,6 +36,9 @@ public class User extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @Enumerated(EnumType.STRING)
+    private Language language = Language.uz;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_role",
@@ -45,11 +46,5 @@ public class User extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(
-            name = "user_privilege",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "privilege_id"))
-    private Set<Privilege> privileges = new HashSet<>();
 
 }

@@ -1,5 +1,9 @@
 spring:
-
+  rabbitmq:
+    host: localhost
+    port: 15672
+    username: guest
+    password: guest
   datasource:
     password: root123
     url: jdbc:postgresql://localhost:5432/bozor
@@ -14,14 +18,14 @@ spring:
       max-request-size: 10MB
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
   security:
     jwt:
-      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      secret-key: 0498EA6C131119796421B127771D6B400EF8D151283A8785234D29AFA6F575BE
       expiration: 86400000 # a day
       refresh-token:
         expiration: 604800000 # 7 days

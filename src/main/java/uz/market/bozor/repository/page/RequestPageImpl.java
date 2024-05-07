@@ -1,20 +1,19 @@
 package uz.market.bozor.repository.page;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class RequestPageImpl implements RequestPage {
 
-  private final int pageNumber;
+    private int pageNumber;
+    private int pageLimit;
+    private int startingIndex;
 
-  private final int pageLimit;
-
-  private final int startingIndex;
-
-  public RequestPageImpl(int pageNumber, int pageLimit) {
-    this.pageNumber = pageNumber;
-    this.pageLimit = pageLimit;
-    this.startingIndex = (pageNumber - 1) * pageLimit;
-  }
 
 }

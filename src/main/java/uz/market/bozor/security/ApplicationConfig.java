@@ -21,7 +21,6 @@ import uz.market.bozor.repository.UserRepository;
 @Configuration
 @RequiredArgsConstructor
 public class ApplicationConfig {
-
     private final UserRepository repository;
 
     @Bean
@@ -35,11 +34,6 @@ public class ApplicationConfig {
                 throw new UserNotActiveException("User status not active");
         };
     }
-
-//    @Bean
-//    public UserDetailsService userDetailsService() {
-//        return username -> null;
-//    }
 
     @Bean
     public AuthenticationProvider authenticationProvider() {
@@ -58,7 +52,6 @@ public class ApplicationConfig {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
 
     public static class UserNotActiveException extends RuntimeException {
         public UserNotActiveException(String message) {

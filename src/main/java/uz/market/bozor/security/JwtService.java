@@ -28,9 +28,6 @@ public class JwtService {
     @Value("${spring.security.jwt.refresh-token.expiration}")
     private long refreshExpiration;
 
-    @Autowired
-    private UserRepository userRepository;
-
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
     }
@@ -42,13 +39,6 @@ public class JwtService {
 
     public String generateToken(@NotNull UserDetails userDetails) {
         Map<String, Object> map = new HashMap<>();
-
-        User user = userRepository.findByEmail(userDetails.getUsername()).orElseThrow();
-
-        if (!user.getPrivileges().isEmpty()) {
-            user.getPrivileges().forEach(privilege -> map.put(String.valueOf(privilege.getPrivilegeName()),
-                    String.valueOf(privilege.getPrivilegeName())));
-        }
 
         userDetails.getAuthorities()
                 .forEach(grantedAuthority -> map.put(String.valueOf(grantedAuthority.getAuthority()),

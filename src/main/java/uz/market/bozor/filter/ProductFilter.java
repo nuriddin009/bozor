@@ -8,7 +8,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.apache.commons.lang3.StringUtils;
+import uz.market.bozor.entity.constants.Language;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
@@ -25,10 +27,10 @@ public class ProductFilter extends PageFilter {
 
     @ApiModelProperty(value = "Min price of products")
     @ToString.Include
-    private Integer minPrice;
+    private BigDecimal minPrice;
     @ApiModelProperty(value = "Max price of products")
     @ToString.Include
-    private Integer maxPrice;
+    private BigDecimal maxPrice;
 
     @ApiModelProperty(value = "Category ids")
     @ToString.Include
@@ -37,6 +39,10 @@ public class ProductFilter extends PageFilter {
     @ApiModelProperty(value = "Get products by it's colors")
     @ToString.Include
     private List<String> colors;
+
+    @ApiModelProperty(value = "product language")
+    @ToString.Include
+    private Language language;
 
     @JsonIgnore
     @ApiModelProperty(hidden = true)

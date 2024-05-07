@@ -10,9 +10,7 @@ import uz.market.bozor.repository.impl.BaseRepositoryImpl;
 @SpringBootApplication
 @EnableJpaRepositories(repositoryBaseClass = BaseRepositoryImpl.class)
 public class BozorApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(BozorApplication.class, args);
     }
-
 }

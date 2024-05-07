@@ -18,27 +18,12 @@ import java.util.UUID;
 @Setter
 @ApiModel(description = "Product parameters")
 @ToString(onlyExplicitlyIncluded = true, doNotUseGetters = true)
-public class ProductFilter extends PageFilter {
+public class CategoryFilter extends PageFilter {
 
 
     @ApiModelProperty(value = "The Search Key filter")
     @ToString.Include
     private String search = "";
-
-    @ApiModelProperty(value = "Min price of products")
-    @ToString.Include
-    private BigDecimal minPrice;
-    @ApiModelProperty(value = "Max price of products")
-    @ToString.Include
-    private BigDecimal maxPrice;
-
-    @ApiModelProperty(value = "Category ids")
-    @ToString.Include
-    private List<UUID> categoryIds;
-
-    @ApiModelProperty(value = "Get products by it's colors")
-    @ToString.Include
-    private List<String> colors;
 
     @ApiModelProperty(value = "product language")
     @ToString.Include

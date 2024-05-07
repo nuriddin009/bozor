@@ -31,38 +31,33 @@ public class SecurityConfiguration {
     public SecurityConfiguration(JwtAuthenticationFilter jwtAuthFilter, AuthenticationProvider authenticationProvider) {
         this.jwtAuthFilter = jwtAuthFilter;
         this.authenticationProvider = authenticationProvider;
-
     }
+
+    private final String[] whiteList = {"/**",
+            "/favicon.ico",
+            "/**/*.png",
+            "/**/*.gif",
+            "/**/*.svg",
+            "/**/*.webp",
+            "/**/*.jpg",
+            "/**/*.html",
+            "/**/*.css",
+            "/**/*.js",
+            "/swagger-ui.html",
+            "/swagger-resources/**",
+            "/v2/**",
+            "/csrf",
+            "/webjars/**"};
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .cors(AbstractHttpConfigurer::disable)
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/**",
-                        "/favicon.ico",
-                        "/**/*.png",
-                        "/**/*.gif",
-                        "/**/*.svg",
-                        "/**/*.webp",
-                        "/**/*.jpg",
-                        "/**/*.html",
-                        "/**/*.css",
-                        "/**/*.js",
-                        "/swagger-ui.html",
-                        "/swagger-resources/**",
-                        "/v2/**",
-                        "/csrf",
-                        "/webjars/**").permitAll().anyRequest().authenticated())
+                .authorizeHttpRequests(auth -> auth.requestMatchers(whiteList).permitAll().anyRequest().authenticated())
                 .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
-                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
-
-                /* .logout(logoutConfigurer -> logoutConfigurer
-                         .logoutUrl("/api/v1/auth/logout")
-                         .addLogoutHandler(logoutHandler)
-                         .logoutSuccessHandler((request, response, authentication) -> SecurityContextHolder.clearContext())
-                 ).exceptionHandling(exceptionHandlingConfig -> exceptionHandlingConfig.authenticationEntryPoint(entryPoint)) */;
+                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 

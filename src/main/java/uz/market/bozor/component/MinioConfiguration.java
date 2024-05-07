@@ -19,6 +19,6 @@ public class MinioConfiguration {
                 .credentials(
                         applicationProperties.getMinio().getUsername(),
                         applicationProperties.getMinio().getPassword()
-                ).build();
+                 ).build();
     }
 }

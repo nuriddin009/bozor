@@ -10,7 +10,14 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
 import uz.market.bozor.entity.User;
 import uz.market.bozor.filter.UserFilter;
+import uz.market.bozor.payload.response.RoleResponse;
+import uz.market.bozor.payload.response.UserResponse;
 import uz.market.bozor.repository.custom.CustomUserRepository;
+import uz.market.bozor.repository.page.RequestPageImpl;
+import uz.market.bozor.repository.page.ResponsePage;
+import uz.market.bozor.repository.page.ResponsePageImpl;
+
+import java.util.List;
 
 @Repository
 public class UserRepositoryImpl implements CustomUserRepository {
@@ -20,10 +27,10 @@ public class UserRepositoryImpl implements CustomUserRepository {
 
 
     @Override
-    public Page<User> findAllByFilter(UserFilter filter) {
+    public ResponsePage<UserResponse> findAllByFilter(UserFilter filter) {
         final boolean hasSearch = StringUtils.isNotEmpty(filter.getSearch());
         final boolean hasSort = filter.formPageable().getSort().isSorted();
-        StringBuilder sql = new StringBuilder("select t from User t where deleted is false ");
+        StringBuilder sql = new StringBuilder("select t from User t where t.deleted is false ");
 
         if (hasSearch) {
             sql.append("and (lower(t.firstname) like :searchKey ");
@@ -56,6 +63,22 @@ public class UserRepositoryImpl implements CustomUserRepository {
             countQuery.setParameter("searchKey", filter.getSearchForQuery());
         }
 
-        return new PageImpl<>(query.getResultList(), filter.getPageable(), countQuery.getSingleResult());
+        List<UserResponse> list = query.getResultList().stream()
+                .map(user -> UserResponse.builder()
+                        .firstname(user.getFirstname())
+                        .lastname(user.getLastname())
+                        .roles(user.getRoles().stream()
+                                .map(role -> new RoleResponse(role.getId(), role.getRoleName())).toList())
+                        .phoneNumber(user.getPhoneNumber())
+                        .status(user.getStatus())
+                        .email(user.getEmail())
+                        .build()).toList();
+
+
+        ResponsePageImpl<UserResponse> response = new ResponsePageImpl<>();
+        response.setTotalElements(countQuery.getSingleResult());
+        response.setRequestPage(new RequestPageImpl(filter.getPage(), filter.getSize(), filter.getStart()));
+        response.setElements(list);
+        return response;
     }
 }

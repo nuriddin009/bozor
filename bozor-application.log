@@ -1,0 +1,155 @@
+2024-05-06T10:32:12.474+05:00  INFO 11080 --- [main] uz.market.bozor.BozorApplication         : Starting BozorApplication using Java 17.0.10 with PID 11080 (C:\Users\ReStart\Desktop\Java\bozor\target\classes started by ReStart in C:\Users\ReStart\Desktop\Java\bozor)
+2024-05-06T10:32:12.480+05:00  INFO 11080 --- [main] uz.market.bozor.BozorApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-05-06T10:32:14.799+05:00  INFO 11080 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-06T10:32:15.135+05:00  INFO 11080 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 312 ms. Found 8 JPA repository interfaces.
+2024-05-06T10:32:17.852+05:00  INFO 11080 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8888 (http)
+2024-05-06T10:32:17.925+05:00  INFO 11080 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-06T10:32:17.930+05:00  INFO 11080 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-05-06T10:32:18.187+05:00  INFO 11080 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-06T10:32:18.188+05:00  INFO 11080 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5549 ms
+2024-05-06T10:32:18.613+05:00  INFO 11080 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-06T10:32:18.843+05:00  INFO 11080 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-05-06T10:32:18.952+05:00  INFO 11080 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-06T10:32:19.711+05:00  INFO 11080 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-06T10:32:19.794+05:00  INFO 11080 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-06T10:32:20.449+05:00  INFO 11080 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@29c25bbc
+2024-05-06T10:32:20.454+05:00  INFO 11080 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-06T10:32:20.590+05:00  WARN 11080 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-06T10:32:26.345+05:00  INFO 11080 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-06T10:32:26.427+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.428+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "cart" does not exist, skipping
+2024-05-06T10:32:26.430+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.430+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "category" does not exist, skipping
+2024-05-06T10:32:26.432+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.432+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "category" does not exist, skipping
+2024-05-06T10:32:26.434+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.434+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "orders" does not exist, skipping
+2024-05-06T10:32:26.436+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.436+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product_category" does not exist, skipping
+2024-05-06T10:32:26.439+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.439+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product_category" does not exist, skipping
+2024-05-06T10:32:26.442+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.442+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product_colors" does not exist, skipping
+2024-05-06T10:32:26.449+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.450+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product_image" does not exist, skipping
+2024-05-06T10:32:26.451+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.452+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product_image" does not exist, skipping
+2024-05-06T10:32:26.453+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.454+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "store" does not exist, skipping
+2024-05-06T10:32:26.457+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.458+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_role" does not exist, skipping
+2024-05-06T10:32:26.459+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.460+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_role" does not exist, skipping
+2024-05-06T10:32:26.462+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.463+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "attachment" does not exist, skipping
+2024-05-06T10:32:26.464+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.465+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "cart" does not exist, skipping
+2024-05-06T10:32:26.466+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.467+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "category" does not exist, skipping
+2024-05-06T10:32:26.468+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.469+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "order_item" does not exist, skipping
+2024-05-06T10:32:26.470+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.471+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-06T10:32:26.473+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.473+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "product" does not exist, skipping
+2024-05-06T10:32:26.474+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.475+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "product_category" does not exist, skipping
+2024-05-06T10:32:26.476+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.477+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "product_colors" does not exist, skipping
+2024-05-06T10:32:26.481+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.482+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "product_image" does not exist, skipping
+2024-05-06T10:32:26.485+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.486+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "role" does not exist, skipping
+2024-05-06T10:32:26.487+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.488+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "store" does not exist, skipping
+2024-05-06T10:32:26.491+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.491+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_role" does not exist, skipping
+2024-05-06T10:32:26.493+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:32:26.493+05:00  WARN 11080 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2024-05-06T10:32:27.195+05:00  INFO 11080 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-06T10:32:33.557+05:00  WARN 11080 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-06T10:32:36.444+05:00  INFO 11080 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1a983294, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@209ab1d7, org.springframework.security.web.context.SecurityContextHolderFilter@314b0d53, org.springframework.security.web.header.HeaderWriterFilter@53791a39, org.springframework.security.web.authentication.logout.LogoutFilter@3c9cab4, uz.market.bozor.security.JwtAuthenticationFilter@cfe72b0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2975715, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47ccbbd5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7937f96e, org.springframework.security.web.session.SessionManagementFilter@41a6cd9e, org.springframework.security.web.access.ExceptionTranslationFilter@28f5a003, org.springframework.security.web.access.intercept.AuthorizationFilter@58b03882]
+2024-05-06T10:32:40.684+05:00  INFO 11080 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8888 (http) with context path ''
+2024-05-06T10:32:40.730+05:00  INFO 11080 --- [main] uz.market.bozor.BozorApplication         : Started BozorApplication in 29.724 seconds (process running for 31.573)
+2024-05-06T10:46:46.850+05:00  INFO 11080 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-06T10:46:47.230+05:00  INFO 11080 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-06T10:46:47.241+05:00  INFO 11080 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-05-06T10:47:03.477+05:00  INFO 12400 --- [main] uz.market.bozor.BozorApplication         : Starting BozorApplication using Java 17.0.10 with PID 12400 (C:\Users\ReStart\Desktop\Java\bozor\target\classes started by ReStart in C:\Users\ReStart\Desktop\Java\bozor)
+2024-05-06T10:47:03.482+05:00  INFO 12400 --- [main] uz.market.bozor.BozorApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-05-06T10:47:05.369+05:00  INFO 12400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-06T10:47:05.638+05:00  INFO 12400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 252 ms. Found 8 JPA repository interfaces.
+2024-05-06T10:47:08.672+05:00  INFO 12400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8888 (http)
+2024-05-06T10:47:08.697+05:00  INFO 12400 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-05-06T10:47:08.699+05:00  INFO 12400 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-05-06T10:47:08.971+05:00  INFO 12400 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-05-06T10:47:08.973+05:00  INFO 12400 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5337 ms
+2024-05-06T10:47:09.702+05:00  INFO 12400 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-06T10:47:09.977+05:00  INFO 12400 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-05-06T10:47:10.134+05:00  INFO 12400 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-05-06T10:47:11.134+05:00  INFO 12400 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-06T10:47:11.234+05:00  INFO 12400 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-05-06T10:47:11.845+05:00  INFO 12400 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1884e671
+2024-05-06T10:47:11.851+05:00  INFO 12400 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-05-06T10:47:11.962+05:00  WARN 12400 --- [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-05-06T10:47:16.425+05:00  INFO 12400 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-06T10:47:16.491+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.492+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "cart" does not exist, skipping
+2024-05-06T10:47:16.494+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.495+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "category" does not exist, skipping
+2024-05-06T10:47:16.496+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.497+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "category" does not exist, skipping
+2024-05-06T10:47:16.499+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.500+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "orders" does not exist, skipping
+2024-05-06T10:47:16.503+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.503+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product_category" does not exist, skipping
+2024-05-06T10:47:16.505+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.506+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product_category" does not exist, skipping
+2024-05-06T10:47:16.508+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.509+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product_colors" does not exist, skipping
+2024-05-06T10:47:16.511+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.511+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product_image" does not exist, skipping
+2024-05-06T10:47:16.513+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.513+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "product_image" does not exist, skipping
+2024-05-06T10:47:16.515+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.516+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "store" does not exist, skipping
+2024-05-06T10:47:16.519+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.519+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_role" does not exist, skipping
+2024-05-06T10:47:16.521+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.521+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_role" does not exist, skipping
+2024-05-06T10:47:16.523+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.523+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "attachment" does not exist, skipping
+2024-05-06T10:47:16.525+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.526+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "cart" does not exist, skipping
+2024-05-06T10:47:16.527+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.528+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "category" does not exist, skipping
+2024-05-06T10:47:16.529+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.529+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "order_item" does not exist, skipping
+2024-05-06T10:47:16.531+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.532+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "orders" does not exist, skipping
+2024-05-06T10:47:16.534+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.534+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "product" does not exist, skipping
+2024-05-06T10:47:16.536+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.536+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "product_category" does not exist, skipping
+2024-05-06T10:47:16.537+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.538+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "product_colors" does not exist, skipping
+2024-05-06T10:47:16.539+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.540+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "product_image" does not exist, skipping
+2024-05-06T10:47:16.542+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.542+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "role" does not exist, skipping
+2024-05-06T10:47:16.543+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.544+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "store" does not exist, skipping
+2024-05-06T10:47:16.545+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.546+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_role" does not exist, skipping
+2024-05-06T10:47:16.547+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2024-05-06T10:47:16.547+05:00  WARN 12400 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2024-05-06T10:47:17.086+05:00  INFO 12400 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-06T10:47:21.350+05:00  WARN 12400 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-06T10:47:22.600+05:00  INFO 12400 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@70eced1f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39068df9, org.springframework.security.web.context.SecurityContextHolderFilter@53791a39, org.springframework.security.web.header.HeaderWriterFilter@50c20b15, org.springframework.security.web.authentication.logout.LogoutFilter@5b084c4c, uz.market.bozor.security.JwtAuthenticationFilter@ab595e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5292d417, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@415c5469, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4ca83ec3, org.springframework.security.web.session.SessionManagementFilter@7a7fdc1a, org.springframework.security.web.access.ExceptionTranslationFilter@254a9f65, org.springframework.security.web.access.intercept.AuthorizationFilter@73e0c775]
+2024-05-06T10:47:24.409+05:00  INFO 12400 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8888 (http) with context path ''
+2024-05-06T10:47:24.460+05:00  INFO 12400 --- [main] uz.market.bozor.BozorApplication         : Started BozorApplication in 22.249 seconds (process running for 23.806)
+2024-05-06T12:12:16.984+05:00  WARN 12400 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m4s874ms231µs100ns).
+2024-05-06T13:54:51.642+05:00  WARN 12400 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58m34s558ms11µs600ns).
+2024-05-06T16:18:37.462+05:00  WARN 12400 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m14s662ms900µs800ns).
+2024-05-06T17:05:50.881+05:00  INFO 12400 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-06T17:05:51.505+05:00  INFO 12400 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-05-06T17:05:51.553+05:00  INFO 12400 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

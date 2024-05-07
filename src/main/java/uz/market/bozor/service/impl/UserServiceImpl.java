@@ -6,11 +6,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import uz.market.bozor.entity.User;
 import uz.market.bozor.filter.UserFilter;
-import uz.market.bozor.mapper.UserMapper;
+import uz.market.bozor.payload.model.ApiResponse;
 import uz.market.bozor.payload.model.BaseResponse;
 import uz.market.bozor.payload.request.UserRequest;
+import uz.market.bozor.payload.response.UserResponse;
 import uz.market.bozor.repository.UserRepository;
+import uz.market.bozor.repository.page.ResponsePage;
 import uz.market.bozor.service.UserService;
+import uz.market.bozor.utils.UserSession;
 
 import java.util.List;
 
@@ -20,15 +23,20 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-    private final UserMapper userMapper;
+    private final UserSession userSession;
+
 
     @Override
-    public BaseResponse<?> getUsers(UserFilter userFilter) {
-        BaseResponse<List<UserRequest>> response = new BaseResponse<>();
-        Page<User> allByFilter = userRepository.findAllByFilter(userFilter);
-        List<UserRequest> dtoList = userMapper.toDtoList(allByFilter.getContent());
-        response.setResponseData(dtoList);
-        response.setMessage("Users list");
-        return response;
+    public ApiResponse getUsers(UserFilter filter) {
+        ResponsePage<UserResponse> allByFilter = userRepository.findAllByFilter(filter);
+        return ApiResponse.successResponse(allByFilter, "Users list");
+    }
+
+    @Override
+    public ApiResponse getStoreUsers(UserFilter filter) {
+        User user = userSession.getUser();
+
+
+        return ApiResponse.successResponse("");
     }
 }

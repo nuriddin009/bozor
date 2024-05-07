@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
 
-    public JwtResponse signIn(AuthReq authReq) {
+    public JwtResponse signIn(@NotNull AuthReq authReq) {
         authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(authReq.email(), authReq.password()));
         User user = userRepository.findByEmail(authReq.email()).orElseThrow();
@@ -37,7 +38,7 @@ public class AuthService {
     }
 
     @SneakyThrows
-    public void refreshToken(HttpServletRequest request, HttpServletResponse response) {
+    public void refreshToken(@NotNull HttpServletRequest request, HttpServletResponse response) {
 
         final String authHeader = request.getHeader(HttpHeaders.AUTHORIZATION);
         final String refreshToken;
