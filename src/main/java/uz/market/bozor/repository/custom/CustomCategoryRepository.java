@@ -1,4 +1,2 @@
-package uz.market.bozor.repository.custom;
-
-public interface CustomCategoryRepository {
+package uz.market.bozor.repository.custom;public class CustomCategoryRepository {
 }
