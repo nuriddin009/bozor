@@ -16,7 +16,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@SQLDelete(sql = "update product set deleted=false where id=?")
+@SQLDelete(sql = "update product set deleted=true where id=?")
 @SQLRestriction(value = "deleted=false")
 @AllArgsConstructor
 @NoArgsConstructor

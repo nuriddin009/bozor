@@ -15,7 +15,7 @@ import uz.market.bozor.entity.template.BaseEntity;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@SQLDelete(sql = "update cart set deleted=false where id=?")
+@SQLDelete(sql = "update cart set deleted=true where id=?")
 @SQLRestriction(value = "deleted=false")
 @Entity
 public class Cart extends BaseEntity {

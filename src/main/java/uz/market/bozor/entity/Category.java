@@ -9,7 +9,7 @@ import uz.market.bozor.entity.template.BaseEntity;
 @Builder
 @Getter
 @Setter
-@SQLDelete(sql = "update category set deleted=false where id=?")
+@SQLDelete(sql = "update category set deleted=true where id=?")
 @SQLRestriction(value = "deleted=false")
 @AllArgsConstructor
 @NoArgsConstructor

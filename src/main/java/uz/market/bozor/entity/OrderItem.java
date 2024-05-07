@@ -14,7 +14,7 @@ import uz.market.bozor.entity.template.BaseEntity;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@SQLDelete(sql = "update order_item set deleted=false where id=?")
+@SQLDelete(sql = "update order_item set deleted=true where id=?")
 @SQLRestriction(value = "deleted=false")
 @Table(name = "order_item")
 @Entity

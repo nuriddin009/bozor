@@ -13,12 +13,13 @@ import org.hibernate.annotations.SQLRestriction;
 import uz.market.bozor.entity.template.BaseEntity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@SQLDelete(sql = "update store set deleted =false where id=?")
+@SQLDelete(sql = "update store set deleted =true where id=?")
 @SQLRestriction(value = "deleted=false")
 @Entity
 public class Store extends BaseEntity implements Serializable {
@@ -30,6 +31,13 @@ public class Store extends BaseEntity implements Serializable {
     private String nameRu;
     @Column(nullable = false)
     private String nameEng;
+
+    private Double latitude;
+    private Double longitude;
+
+    private String supportEmail;
+    private String supportPhone;
+    private BigDecimal ordersCount;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private User owner;
