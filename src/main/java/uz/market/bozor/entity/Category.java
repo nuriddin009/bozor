@@ -24,7 +24,8 @@ public class Category extends BaseEntity {
     private String nameEng;
     @ManyToOne(fetch = FetchType.LAZY)
     private Category parent;
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Store store;
     @OneToOne(fetch = FetchType.LAZY)
     private Attachment image;
     @Column(columnDefinition = "text")

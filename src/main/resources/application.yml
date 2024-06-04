@@ -36,9 +36,8 @@ application:
     username: rootbozor
     password: rootbozor
 server:
-  port: 8888
+  port: 8080
 
 logging:
   file:
     name: bozor-application.log
-

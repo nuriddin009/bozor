@@ -46,7 +46,7 @@ public class ProductRepositoryImpl implements ProductCompositeRepository {
         if (hasSearch) {
             sql.append(" and (lower(t.nameUz) like :searchKey");
             sql.append(" or lower(t.nameRu) like :searchKey");
-            sql.append(" or lower(t.nameEng) like :searchKey");
+            sql.append(" or lower(t.nameEng) like :seasrchKey");
             sql.append(" or lower(t.detailsUz) like :searchKey");
             sql.append(" or lower(t.detailsRu) like :searchKey");
             sql.append(" or lower(t.detailsEng) like :searchKey)");

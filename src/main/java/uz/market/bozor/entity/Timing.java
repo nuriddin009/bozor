@@ -1,9 +1,6 @@
 package uz.market.bozor.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,7 +24,7 @@ public class Timing extends BaseEntity {
 
     private LocalTime openingTime;
     private LocalTime closingTime;
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private DAY day;
     @ManyToOne(fetch = FetchType.LAZY)
     private Store store;

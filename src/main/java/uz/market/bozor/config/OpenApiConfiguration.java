@@ -18,10 +18,10 @@ import org.springframework.context.annotation.Configuration;
         scheme = "Authorization"
 )
 @OpenAPIDefinition(
-        info = @Info(title = "Store"),
+        info = @Info(title = "Store Api"),
         security = @SecurityRequirement(name = "Authorization"),
         servers = {
-                @Server(url = "http://localhost:8888", description = "Local Server")
+                @Server(url = "http://localhost:8080", description = "Local Server")
         }
 )
 public class OpenApiConfiguration {

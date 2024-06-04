@@ -42,7 +42,8 @@ public class CategoryRepositoryImpl implements CustomCategoryRepository {
         ResponsePageImpl<CategoryResponse> response = new ResponsePageImpl<>();
         response.setTotalElements(countQuery.getSingleResult());
         response.setElements(collect);
-        response.setRequestPage(new RequestPageImpl(filter.getPage(), filter.getSize(), filter.getStart()));
+        response.setRequestPage(new RequestPageImpl(filter.getPage(),
+                filter.getSize(), filter.getStart()));
 
         return response;
     }

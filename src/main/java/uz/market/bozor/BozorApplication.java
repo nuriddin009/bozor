@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import uz.market.bozor.repository.impl.BaseRepositoryImpl;
 
-@EnableJpaAuditing
+@EnableJpaAuditing(auditorAwareRef = "securityAuditorAware")
 @SpringBootApplication
 @EnableJpaRepositories(repositoryBaseClass = BaseRepositoryImpl.class)
 public class BozorApplication {

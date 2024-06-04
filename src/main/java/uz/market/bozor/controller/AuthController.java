@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import uz.market.bozor.payload.model.ApiResponse;
 import uz.market.bozor.payload.request.AuthReq;
+import uz.market.bozor.payload.request.RegisterReq;
 import uz.market.bozor.service.AuthService;
 
 @RestController
@@ -25,6 +26,11 @@ public class AuthController {
     @PostMapping("signIn")
     public ResponseEntity<?> signIn(@RequestBody @Valid AuthReq authReq) {
         return ResponseEntity.ok(authService.signIn(authReq));
+    }
+
+    @PostMapping("signUp")
+    public ResponseEntity<?> signUp(@RequestBody @Valid RegisterReq req){
+        return ResponseEntity.ok(authService.signUp(req));
     }
 
     @PostMapping("token/refresh")

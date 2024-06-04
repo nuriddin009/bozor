@@ -59,7 +59,7 @@ public class FileUploadService {
 
         FileDTO fileDTO;
         try {
-            fileDTO = uploadToStorageServer(file.getBytes(), file.getOriginalFilename(), file.getContentType(), isPublic);
+            fileDTO = this.uploadToStorageServer(file.getBytes(), file.getOriginalFilename(), file.getContentType(), isPublic);
         } catch (Exception e) {
             log.error("An unaccepted error has occurred while uploading file: ", e);
             throw new RuntimeException("An unaccepted error has occurred while uploading file");
@@ -97,6 +97,7 @@ public class FileUploadService {
                             .contentType(contentType)
                             .build()
             );
+
 
             FileDTO uploadDTO = new FileDTO();
             uploadDTO.setUrl(StringUtils.join(applicationProperties.getMinio().getHost(), "/", applicationProperties.getMinio().getApplicationName(), "/", objectName));
